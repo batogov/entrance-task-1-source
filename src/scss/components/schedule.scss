@@ -1,0 +1,17 @@
+.schedule {
+    margin: 30px 0;
+
+    &__no-results {
+        padding: 30px;
+
+        text-align: center;
+
+        &--hidden {
+            display: none;
+        }
+
+        span {
+            font: 15px Arial, Helvetica, sans-serif;
+        }
+    }
+}

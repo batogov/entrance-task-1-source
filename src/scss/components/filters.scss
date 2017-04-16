@@ -1,0 +1,19 @@
+.filters {
+    padding: 0 30px 30px 30px;
+
+    background-color: #fff;
+    
+    font-size: 0;
+
+    @media (max-width: 760px) {
+        & {
+            padding: 0 25px 25px 25px;
+        }
+    }
+
+    @media (max-width: 560px) {
+        & {
+            padding: 0 20px 20px 20px;
+        }
+    }
+}

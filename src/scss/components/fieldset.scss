@@ -1,0 +1,83 @@
+.fieldset {
+    position: relative;
+
+    display: inline-block;
+    width: 270px;
+    padding: 60px 0 0 0;
+    margin: 0 45px 0 0;
+
+    font-size: 0;
+
+    border: 0;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    label {
+        position: absolute;
+        left: 0;
+        top: 30px;
+
+        font: 15px Arial, Helvetica, sans-serif;
+    }
+
+    select {
+        width: 100%;
+        padding: 0 15px;
+
+        font: 15px/30px Arial, Helvetica, sans-serif;
+
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+
+        appearance: none;
+    }
+
+    &__select-wrapper {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+
+            display: block;
+            width: 11px;
+            height: 6px;
+
+            background: url("../img/icons/select-icon.svg");
+
+            transform: translateY(-50%);
+
+            content: "";
+        }
+    }
+
+    @media (max-width: 760px) {
+
+        & {
+            display: block;
+            margin-right: 0;
+            padding-top: 55px;
+        }
+
+        label {
+            top: 25px;
+        }
+
+    }
+
+    @media (max-width: 560px) {
+        & {
+            padding-top: 50px;
+            width: 100%;
+        }
+
+        label {
+            top: 20px;
+        }
+    }
+
+}

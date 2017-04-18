@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/vendor.min.css">
+
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <title>Расписание</title>
+</head>
+<body>
+    <div class="content">
+
+        <header class="header">
+            <img src="img/yandex-logo.png" alt="">
+        </header>
+
+        <div class="filters">
+            <form>
+                <div class="filters__group">
+
+                    <fieldset class="fieldset">
+                        <label for="school">Школа</label>
+
+                        <div class="fieldset__select-wrapper">
+                            <select id="school">
+                                <option value="all" checked>Все</option>
+                                <option value="frontend" checked>Разработки интерфейсов</option>
+                                <option value="mobdev">Мобильной разработки</option>
+                                <option value="design">Мобильного дизайна</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="fieldset">
+                        <label for="teacher">Преподаватель</label>
+
+                        <div class="fieldset__select-wrapper">
+                            <select id="teacher"></select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="fieldset">
+                        <label for="date">Сортировка по дате</label>
+
+                        <div class="fieldset__select-wrapper">
+                            <select id="date">
+                                <option value="up">По возрастанию</option>
+                                <option value="down">По убыванию</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="schedule">
+
+            <div class="schedule__lessons"></div>
+
+            <div class="schedule__no-results schedule__no-results--hidden">
+                <span>К сожалению, по вашему запросу ничего не найдено :(</span>
+            </div>
+
+        </div>
+    </div>
+
+    <template id="lesson-template">
+
+        {{ #materials }}
+        <div class="lesson__materials">
+            <span>Лекция прошла</span>
+            <a href="" class="lesson__btn">Материалы</a>
+        </div>
+        {{ /materials }}
+
+        {{ #time }}
+        <div class="lesson__time-and-hall">
+            <span class="lesson__time">{{ datetime }}</span>
+            <span class="lesson__hall">{{ hall }}</span>
+        </div>
+        {{ /time }}
+
+        <div class="lesson__name-and-schools">
+            <div class="lesson__schools">
+            {{ #schools }}
+                <span>{{ name }}</span>
+            {{ /schools }}
+            </div>
+            <span class="lesson__name">{{ name }}</span>
+        </div>
+
+        <div class="lesson__teachers">
+            {{ #teachers }}
+            <div class="lesson__teacher-block">
+                <span class="lesson__teacher-name">{{ name }}</span>
+
+                <div class="teacher-popup teacher-popup--hidden">
+
+                    <div class="teacher-popup__content">
+
+                        <i class="teacher-popup__tail"></i>
+                        <i class="teacher-popup__close"></i>
+
+                        <div class="teacher-popup__img">
+                            <img src="img/teachers/{{ imgFileName }}.jpg" alt="">
+                        </div>
+
+                        <div class="teacher-popup__desc">
+                            <span class="teacher-popup__name">{{ name }}</span>
+                            <p>{{ desc }}</p>
+                        </div>
+                    </div>
+
+                    <div class="teacher-popup__under"></div>
+                </div>
+
+            </div>
+            {{ /teachers }}
+        </div>
+    </template>
+
+    <script src="js/vendor.min.js"></script>
+
+    <script src="js/main.min.js"></script>
+
+</body>
+</html>

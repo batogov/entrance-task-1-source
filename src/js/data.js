@@ -1,8 +1,5 @@
 (function () {
-
-
     var lessons = [
-
         {
             name: "Адаптивная вёрстка",
             schools: ["frontend"],
@@ -57,7 +54,7 @@
             schools: ["frontend"],
             teachers: ["andryp"],
             hall: "Переговорка «Гарвард»",
-            datetime: "2016-12-01T19:00"
+            datetime: "2016-12-01T16:00"
         },
 
         {
@@ -113,10 +110,8 @@
             schools: ["mobdev"],
             teachers: ["vladimirt"],
             hall: "Зал «Экстрополис»",
-            datetime: "2016-11-09T18:30"
+            datetime: "2016-11-09T16:30"
         },
-
-
 
         {
             name: "Идея, исследование, концепт",
@@ -139,7 +134,7 @@
             schools: ["design"],
             teachers: ["sergeyk"],
             hall: "Зал «Мулен Руж»",
-            datetime: "2016-11-01T20:00"
+            datetime: "2016-11-02T20:00"
         },
 
         {
@@ -155,7 +150,7 @@
             schools: ["design"],
             teachers: ["sergeyt", "darias"],
             hall: "Переговорка «Оксфорд»",
-            datetime: "2016-11-08T18:00"
+            datetime: "2016-11-08T16:00"
         },
 
         {
@@ -179,7 +174,7 @@
             schools: ["design"],
             teachers: ["rijshouwerk", "treubj"],
             hall: "Зал «Экстрополис»",
-            datetime: "2016-11-15T18:00"
+            datetime: "2016-11-15T16:00"
         },
 
         {
@@ -213,12 +208,10 @@
             hall: "Переговорка «Оксфорд»",
             datetime: "2016-12-13T18:30"
         }
-
     ];
 
 
     var teachers = {
-
         "dmitriyd": {
             name: "Дмитрий Душкин",
             desc: "Кандидат технических наук, научный сотрудник ИПУ РАН с 2008 по 2013. Пришёл в Яндекс.Картинки в 2014 году, отвечал за мобильную версию и рост производительности сервиса. В 2016 перешёл в Yandex Data Factory, где разрабатывает интерфейсы и дизайн веб-приложений для B2B."
@@ -338,7 +331,6 @@
             name: "Ждан Филиппов",
             desc: "Арт-директор коммуникаций Яндекса. В прошлом — арт-директор журналов «CitizenK», «Эрмитаж», «Секрет Фирмы», «Top-Flight», сотрудник «Мастерской Димы Барбанеля». Занимался макетной работой для компаний Readymag, Aliexpress, ONY, Charmer, MINI, Grohe и Мосметрострой."
         }
-
     };
 
 
@@ -352,6 +344,4 @@
     window.lessons = lessons;
     window.teachers = teachers;
     window.schools = schools;
-
-
 })();

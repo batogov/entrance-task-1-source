@@ -1,6 +1,4 @@
 (function() {
-
-
     var now = new Date(2016, 10, 1);
 
 
@@ -10,13 +8,13 @@
     var sortSelectElem = document.querySelector("#date");
 
 
-    // рендерим список преподавателей и лекции
+    // Рендерим список преподавателей и лекции
     renderTeachers(teacherSelectElem);
     var filteredLessons = filterLessons(schoolSelectElem, teacherSelectElem, sortSelectElem);
     renderLessons(scheduleElem, filteredLessons);
 
 
-    // вешаем обработчики на все селекты
+    // Вешаем обработчики на все селекты
     [schoolSelectElem, teacherSelectElem, sortSelectElem].forEach(function(selectElem) {
         selectElem.addEventListener("change", function(event) {
             event.preventDefault();
@@ -24,9 +22,6 @@
             renderLessons(scheduleElem, filteredLessons);
         });
     });
-
-
-
 
 
     /**
@@ -39,53 +34,37 @@
     function filterLessons(schoolSelectElem, teacherSelectElem, sortSelectElem) {
         var lessons = window.lessons;
 
-
-        // фильтрация по школе
+        // Фильтрация по школе
         var schoolValue = schoolSelectElem.value;
 
         if (schoolValue !== "all") {
-
             lessons = lessons.filter(function(lesson) {
-                var flag = false;
-                lesson.schools.forEach(function(school) {
-                    if (school === schoolValue) {
-                        flag = true;
-                    }
+                return lesson.schools.some(function(school) {
+                    return school === schoolValue;
                 });
-                return flag;
             });
         }
 
-
-        // фильтрация по дате
+        // Фильтрация по дате
         if (sortSelectElem.value === "up") {
             lessons = sortByDate(lessons);
         } else {
             lessons = sortByDate(lessons).reverse();
         }
 
-
-        // сортировка по преподавателю
+        // Сортировка по преподавателю
         var teacherValue = teacherSelectElem.value;
 
         if (teacherValue !== "all") {
-
             lessons = lessons.filter(function(lesson) {
-                var flag = false;
-                lesson.teachers.forEach(function(teacher) {
-                    if (teacher === teacherValue) {
-                        flag = true;
-                    }
+                return lesson.teachers.some(function(teacher) {
+                    return teacher === teacherValue;
                 });
-                return flag;
             });
         }
 
         return lessons;
     }
-
-
-
 
 
     /**
@@ -126,7 +105,7 @@
                     lessonData.teachers.push(teacher);
                 });
 
-                // если лекция прошла
+                // Если лекция прошла
                 if (new Date(Date.parse(rawLessonData.datetime)) < now) {
                     lessonData.materials = true;
                 } else {
@@ -145,9 +124,6 @@
             noResultsElem.classList.remove("schedule__no-results--hidden");
         }
     }
-
-
-
 
 
     /**
@@ -173,9 +149,6 @@
     }
 
 
-
-
-
     /**
      * Функция возвращает массив лекций, отсортированных по возрастанию даты.
      * @param lessons {Array} Массив лекций.
@@ -189,9 +162,6 @@
             return firstLessonDate - secondLessonDate;
         });
     }
-
-
-
 
 
     /**
@@ -211,9 +181,6 @@
 
         return element;
     }
-
-
-
 
 
     /**
@@ -251,9 +218,6 @@
     }
 
 
-
-
-
     /**
      * Функция создаёт события для всплывающих окон с информацией о преподавателях
      * и привязывает их к необходимым объектам на странице. Вызывается после того,
@@ -288,6 +252,4 @@
             });
         }
     }
-
-
 })();

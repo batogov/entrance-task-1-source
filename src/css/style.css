@@ -50,13 +50,17 @@ body {
   .fieldset select {
     width: 100%;
     padding: 0 15px;
+    height: 30px;
     font: 15px/30px Arial, Helvetica, sans-serif;
+    text-overflow: "";
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 3px;
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none; }
+  .fieldset select::-ms-expand {
+    display: none; }
   .fieldset__select-wrapper {
     position: relative; }
     .fieldset__select-wrapper::after {
@@ -278,6 +282,7 @@ body {
     position: fixed;
     left: 50%;
     top: 50%;
+    bottom: auto;
     width: 90%;
     -webkit-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%); }

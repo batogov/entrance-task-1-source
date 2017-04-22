@@ -25,14 +25,20 @@
     select {
         width: 100%;
         padding: 0 15px;
+        height: 30px;
 
         font: 15px/30px Arial, Helvetica, sans-serif;
+        text-overflow: "";
 
         background-color: #fff;
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-radius: 3px;
 
         appearance: none;
+    }
+
+    select::-ms-expand {
+        display: none;
     }
 
     &__select-wrapper {

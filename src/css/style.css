@@ -50,7 +50,7 @@ body {
   .fieldset select {
     width: 100%;
     padding: 0 15px;
-    height: 30px;
+    height: 32px;
     font: 15px/30px Arial, Helvetica, sans-serif;
     text-overflow: "";
     background-color: #fff;
